@@ -125,9 +125,9 @@ const Insights = () => {
   return (
     <section
       id="insights"
-      className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50"
+      className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 font-sans"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto font-sans">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Insights & Resources

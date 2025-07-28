@@ -95,8 +95,8 @@ const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
     navigate(`/services/${service.route}`);
   };
 
-  return (
-    <section id="services" className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+    return (
+    <section id="services" className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden font-sans">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-pulse" />
@@ -104,7 +104,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
         <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }} />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 font-sans">
         {/* Header Section */}
         <motion.div 
           className="text-center mb-16"

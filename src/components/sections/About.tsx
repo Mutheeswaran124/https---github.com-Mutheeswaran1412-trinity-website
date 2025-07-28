@@ -528,7 +528,7 @@ const About = () => {
       </div>
 
       {/* Custom Styles */}
-     // ...existing code...
+    
       {/* Custom Styles */}
      <style>{`
   @keyframes spin-slow {

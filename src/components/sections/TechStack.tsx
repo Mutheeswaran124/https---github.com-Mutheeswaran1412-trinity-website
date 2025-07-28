@@ -137,7 +137,7 @@ const TechStack = () => {
       id="tech-stack"
       title="Our Technology Stack"
       subtitle="Cutting-edge technologies powering our data solutions"
-      className="bg-white text-gray-900 relative overflow-hidden"
+      className="bg-white text-gray-900 relative overflow-hidden font-sans"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-72 h-72 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>

@@ -54,7 +54,7 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 max-w-7xl mx-auto mt-[-30px] max-h-[80vh] md:max-h-none overflow-y-auto md:overflow-visible">
+    <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 max-w-7xl mx-auto mt-[-30px] max-h-[80vh] md:max-h-none overflow-y-auto md:overflow-visible font-sans text-gray-800">
       <div className="relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -74,10 +74,10 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
               <span className="text-blue-600 text-sm font-semibold tracking-wide uppercase">
                 About Trinity
               </span>
-              <h2 className="text-2xl font-bold text-gray-900 leading-tight">
+              <h2 className="text-2xl font-bold text-blue-800 leading-tight">
                 Why Trinity <span className="text-blue-600">Solutions?</span>
               </h2>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-700 text-sm leading-relaxed">
                 Because we don't just deliver services — we solve real problems.
                 We bring together people, process, and purpose to create tech that works, scales, and drives impact.
               </p>
@@ -99,7 +99,7 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
                   <div className={`p-2 rounded-lg ${item.color}`}>
                     <item.icon className="h-4 w-4 text-white" />
                   </div>
-                  <span className="text-sm font-medium text-gray-700 flex-1">
+                  <span className="text-sm font-medium text-blue-900 flex-1">
                     {item.text}
                   </span>
                 </motion.div>
@@ -116,7 +116,7 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
                 <span className="text-purple-600 text-sm font-semibold tracking-wide uppercase">
                   Technology Partners
                 </span>
-                <h3 className="text-lg font-bold text-gray-900 mt-1">Trusted Partnerships</h3>
+                <h3 className="text-lg font-bold text-blue-800 mt-1">Trusted Partnerships</h3>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 {partners.map((partner, index) => (
@@ -133,7 +133,7 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
                       alt={partner.name}
                       className="h-5 w-5 object-contain"
                     />
-                    <span className="text-xs font-medium text-gray-700">
+                    <span className="text-xs font-medium text-blue-900">
                       {partner.name}
                     </span>
                   </motion.a>
@@ -151,7 +151,7 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
                 <span className="text-emerald-600 text-sm font-semibold tracking-wide uppercase">
                   Our Impact
                 </span>
-                <h3 className="text-lg font-bold text-gray-900 mt-1">Measurable Results</h3>
+                <h3 className="text-lg font-bold text-blue-800 mt-1">Measurable Results</h3>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 {highlights.map((highlight, index) => (
@@ -206,10 +206,10 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
                 <span className="text-blue-600 text-sm font-semibold tracking-wide uppercase">
                   About Trinity
                 </span>
-                <h3 className="text-2xl font-bold text-gray-900 leading-tight">
+                <h3 className="text-2xl font-bold text-blue-800 leading-tight">
                   Why Trinity <span className="text-blue-600">Solutions?</span>
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-700 text-sm leading-relaxed">
                   Because we don't just deliver services — we solve real problems.
                   We bring together people, process, and purpose to create tech that works, scales, and drives impact.
                   <span className="font-semibold text-blue-600"> Data-smart. AI-driven. Human-focused.</span>
@@ -233,7 +233,7 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
                     <div className={`p-2 rounded-lg ${item.color}`}>
                       <item.icon className="h-4 w-4 text-white" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">
+                    <span className="text-sm font-medium text-blue-900">
                       {item.text}
                     </span>
                   </motion.div>
@@ -251,7 +251,7 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
                 <span className="text-purple-600 text-sm font-semibold tracking-wide uppercase">
                   Technology Partners
                 </span>
-                <h3 className="text-xl font-bold text-gray-900">Trusted Partnerships</h3>
+                <h3 className="text-xl font-bold text-blue-800">Trusted Partnerships</h3>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -275,7 +275,7 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
                         className="h-6 w-6 object-contain"
                       />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">
+                    <span className="text-sm font-medium text-blue-900">
                       {partner.name}
                     </span>
                   </motion.a>
@@ -304,7 +304,7 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
                 <span className="text-emerald-600 text-sm font-semibold tracking-wide uppercase">
                   Our Impact
                 </span>
-                <h3 className="text-xl font-bold text-gray-900">Measurable Results</h3>
+                <h3 className="text-xl font-bold text-blue-800">Measurable Results</h3>
               </motion.div>
               <div className="grid grid-cols-2 gap-3">
                 {highlights.map((highlight, index) => (
@@ -339,6 +339,15 @@ const MegaMenuAbout: React.FC<MegaMenuAboutProps> = ({ onClose }) => {
           </div>
         </div>
       </div>
+      {/* Custom Font Style */}
+      <style>{`
+        .font-sans {
+          font-family: 'Roboto', 'Arial', 'Helvetica Neue', Arial, sans-serif !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          letter-spacing: 0.01em;
+        }
+      `}</style>
     </div>
   );
 };

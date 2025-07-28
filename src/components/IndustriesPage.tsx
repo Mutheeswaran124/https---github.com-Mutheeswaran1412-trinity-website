@@ -209,7 +209,7 @@ const IndustriesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 font-sans">
       {/* Sticky Header */}
       <div className="fixed top-0 left-0 w-full z-50">
         <Header />
@@ -217,7 +217,7 @@ const IndustriesPage = () => {
 
       <div className="pt-20">
         {/* Hero Section */}
-        <div className="bg-[#1a3085] text-white py-20">
+        <div className="bg-[#1a3085] text-white py-20 font-sans">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="flex justify-center mb-6">
               <span className="bg-blue-800/80 text-blue-100 px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-2 mx-auto">
@@ -249,7 +249,7 @@ const IndustriesPage = () => {
         </div>
 
         {/* Industries Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 font-sans">
           <div className="space-y-24">
             {industries.map((industry, index) => (
               <div
@@ -331,11 +331,17 @@ const IndustriesPage = () => {
             ))}
           </div>
         </div>
-
-       
-        </div>
+        {/* Custom Font Style */}
+        <style>{`
+          .font-sans {
+            font-family: 'Roboto', 'Arial', 'Helvetica Neue', Arial, sans-serif !important;
+            font-style: normal !important;
+            font-weight: 400 !important;
+            letter-spacing: 0.01em;
+          }
+        `}</style>
       </div>
-    
+    </div>
   );
 };
 

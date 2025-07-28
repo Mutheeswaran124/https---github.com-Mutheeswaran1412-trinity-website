@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+    <footer className="bg-gray-900 text-white pt-16 pb-8 font-sans">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -53,7 +53,6 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            {/* The heading now has text-white class */}
             <h3 className="text-lg font-semibold mb-4 text-white">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -75,7 +74,6 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            {/* The heading now has text-white class */}
             <h3 className="text-lg font-semibold mb-4 text-white">Stay Updated</h3>
             <p className="text-gray-400 mb-4">
               Subscribe to our newsletter for the latest insights and trends in data analytics.
@@ -102,6 +100,15 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Trinity Technology Solution LLC. All rights reserved.</p>
         </div>
       </div>
+      {/* Custom Font Style */}
+      <style>{`
+        .font-sans {
+          font-family: 'Roboto', 'Arial', 'Helvetica Neue', Arial, sans-serif !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          letter-spacing: 0.01em;
+        }
+      `}</style>
     </footer>
   );
 };

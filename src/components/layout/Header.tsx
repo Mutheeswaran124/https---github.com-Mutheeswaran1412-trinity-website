@@ -1,17 +1,13 @@
-import { useState, useEffect } from 'react'; // Removed lazy and Suspense
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import TrinityLogo from '../../Assets/trinity-logo.png';
 
 import MegaMenuAbout from '../MegaMenus/MegaMenuAbout';
-// Import MegaMenuServices statically like the others
 import MegaMenuServices from '../MegaMenus/MegaMenuServices';
 import MegaMenuTechStack from '../MegaMenus/MegaMenuTechStack';
 import MegaMenuIndustries from '../MegaMenus/MegaMenuIndustries';
 import MegaMenuInsights from '../MegaMenus/MegaMenuInsights';
 import MegaMenuCareers from '../MegaMenus/MegaMenuCareers';
-
-// The lazy import has been removed from here.
-// const MegaMenuServices = lazy(() => import('../MegaMenus/MegaMenuServices'));
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,10 +33,8 @@ const Header = () => {
 
   const handleMenuClick = (key: string) => {
     if (activeMenu === key) {
-      // If clicking the same menu item, close it
       setActiveMenu(null);
     } else {
-      // If clicking a different menu item, open it
       setActiveMenu(key);
     }
   };
@@ -70,7 +64,7 @@ const Header = () => {
         className={`fixed w-full z-50 transition-all duration-300 font-sans ${
           isScrolled ? 'bg-white shadow-md' : 'bg-white'
         }`}
-        style={{ fontFamily: 'Poppins, sans-serif', height: '70px' }}
+        style={{ height: '70px' }}
       >
         {/* Background Animated Blobs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -80,12 +74,12 @@ const Header = () => {
         </div>
 
         {/* Main Nav Content */}
-        <div className="container mx-auto px-4 md:px-6 flex justify-between items-center relative z-10 h-full">
+        <div className="container mx-auto px-4 md:px-6 flex justify-between items-center relative z-10 h-full font-sans">
           <a href="/" className="flex items-center h-full">
             <img src={TrinityLogo} alt="Trinity Logo" className="h-10 md:h-12 w-auto block" />
           </a>
 
-          <nav className="hidden md:flex items-center space-x-6 ml-auto h-full">
+          <nav className="hidden md:flex items-center space-x-6 ml-auto h-full font-sans">
             {navLinks.map((link) => (
               <div key={link.key} className="relative h-full flex items-center">
                 <button
@@ -94,7 +88,7 @@ const Header = () => {
                     activeMenu === link.key
                       ? 'text-blue-700 border-b-2 border-blue-700'
                       : 'text-blue-800 hover:text-blue-600'
-                  }`}
+                  } font-sans`}
                 >
                   {link.name}
                 </button>
@@ -104,7 +98,7 @@ const Header = () => {
 
           <a
             href="#contact"
-            className="hidden md:inline-block font-semibold bg-blue-600 text-white px-5 py-2 rounded-md transition-colors hover:bg-blue-700 text-base ml-4"
+            className="hidden md:inline-block font-semibold bg-blue-600 text-white px-5 py-2 rounded-md transition-colors hover:bg-blue-700 text-base ml-4 font-sans"
           >
             Contact Us
           </a>
@@ -121,10 +115,9 @@ const Header = () => {
 
       {/* Mega Menu Overlay */}
       {activeMenu && (
-        <div className="fixed inset-0 z-40 bg-black bg-opacity-20 backdrop-blur-sm">
-          <div className="mega-menu-container absolute top-[70px] left-0 right-0 bg-white shadow-2xl border-t border-gray-200">
+        <div className="fixed inset-0 z-40 bg-black bg-opacity-20 backdrop-blur-sm font-sans">
+          <div className="mega-menu-container absolute top-[70px] left-0 right-0 bg-white shadow-2xl border-t border-gray-200 font-sans">
             <div className="container mx-auto px-6 py-10">
-              {/* The <Suspense> wrapper has been removed from here */}
               {renderMegaMenu(activeMenu)}
             </div>
           </div>
@@ -133,7 +126,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-white pt-[70px]">
+        <div className="md:hidden fixed inset-0 z-40 bg-white pt-[70px] font-sans">
           <div className="container mx-auto px-4 py-5">
             <nav className="space-y-3">
               {navLinks.map((link) => (
@@ -143,14 +136,14 @@ const Header = () => {
                     handleMenuClick(link.key);
                     setIsOpen(false);
                   }}
-                  className="block w-full text-left font-semibold text-blue-800 hover:text-blue-600 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-base"
+                  className="block w-full text-left font-semibold text-blue-800 hover:text-blue-600 py-2 px-3 rounded-lg hover:bg-blue-50 transition-colors text-base font-sans"
                 >
                   {link.name}
                 </button>
               ))}
               <a
                 href="#contact"
-                className="block w-full text-center font-semibold bg-blue-600 text-white px-5 py-3 rounded-md transition-colors hover:bg-blue-700 mt-5 text-base"
+                className="block w-full text-center font-semibold bg-blue-600 text-white px-5 py-3 rounded-md transition-colors hover:bg-blue-700 mt-5 text-base font-sans"
               >
                 Contact Us
               </a>
@@ -158,6 +151,15 @@ const Header = () => {
           </div>
         </div>
       )}
+      {/* Custom Font Style */}
+      <style>{`
+        .font-sans {
+          font-family: 'Roboto', 'Arial', 'Helvetica Neue', Arial, sans-serif !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          letter-spacing: 0.01em;
+        }
+      `}</style>
     </>
   );
 };

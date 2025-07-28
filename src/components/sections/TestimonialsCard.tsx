@@ -61,11 +61,12 @@ const TestimonialCard = ({ name, title, image, quote }) => (
   </div>
 );
 
+// ...existing code...
 function TestimonialsSection() {
   return (
-    <div className="min-h-screen bg-white flex items-center">
+    <div className="min-h-screen bg-white flex items-center font-sans">
       <div className="w-full">
-        <div className="container mx-auto px-4 py-20">
+        <div className="container mx-auto px-4 py-20 font-sans">
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-blue-600 mb-4 tracking-tight">
               Trusted By Industry Leaders
@@ -105,23 +106,23 @@ function TestimonialsSection() {
       </div>
 
       <style jsx>{`
-        /* The animation moves the container to the left by the width of the first set of cards PLUS the margin */
         @keyframes scroll {
           0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-100% - 2rem)); } /* 2rem = 32px (the mr-8 value) */
+          100% { transform: translateX(calc(-100% - 2rem)); }
         }
-        
         .animate-scroll {
-          /*
-            - The duration (60s) controls the speed. Larger number = slower.
-            - 'linear' ensures constant speed.
-            - 'infinite' makes it loop forever.
-          */
           animation: scroll 60s linear infinite;
+        }
+        .font-sans {
+          font-family: 'Roboto', 'Arial', 'Helvetica Neue', Arial, sans-serif !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          letter-spacing: 0.01em;
         }
       `}</style>
     </div>
   );
 }
+// ...existing code...
 
 export default TestimonialsSection;

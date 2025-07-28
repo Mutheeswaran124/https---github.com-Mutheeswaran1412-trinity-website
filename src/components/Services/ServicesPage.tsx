@@ -222,15 +222,17 @@ const ServicesPage = () => {
 
   if (!currentService || !Icon) return null;
 
+  if (!currentService || !Icon) return null;
+
   return (
     <>
       <div className="fixed top-0 left-0 w-full z-50">
         <Header />
       </div>
 
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white pt-24">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white pt-24 font-sans">
         {/* Banner */}
-        <div className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-20 mt-4">
+        <div className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white py-20 mt-4 font-sans">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-7xl mx-auto px-6">
             {/* Back Button */}
@@ -286,7 +288,7 @@ const ServicesPage = () => {
         </div>
 
         {/* Features + Metrics */}
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto px-6 py-16 font-sans">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-8">
               <div>
@@ -343,6 +345,15 @@ const ServicesPage = () => {
             </div>
           </div>
         </div>
+        {/* Custom Font Style */}
+        <style>{`
+          .font-sans {
+            font-family: 'Roboto', 'Arial', 'Helvetica Neue', Arial, sans-serif !important;
+            font-style: normal !important;
+            font-weight: 400 !important;
+            letter-spacing: 0.01em;
+          }
+        `}</style>
       </div>
     </>
   );

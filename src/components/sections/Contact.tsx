@@ -5,7 +5,6 @@ import contact from '../../animations/contact.lottie?url';
 import emailjs from '@emailjs/browser';
 import ReactCountryFlag from 'react-country-flag';
 
-
 // Section Component
 const Section: React.FC<{ id: string; title: string; children: React.ReactNode; className?: string }> = ({
   id,
@@ -23,7 +22,6 @@ const Section: React.FC<{ id: string; title: string; children: React.ReactNode; 
   </section>
 );
 
-
 // Button Component
 type ButtonProps = {
   children: React.ReactNode;
@@ -32,7 +30,6 @@ type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
-
 
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -45,14 +42,12 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses =
     'inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
 
-
   const variants = {
     primary:
       'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 focus:ring-blue-500 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5',
     secondary:
       'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 focus:ring-gray-500',
   };
-
 
   return (
     <button
@@ -66,7 +61,6 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-
 const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -74,16 +68,13 @@ const Contact: React.FC = () => {
   const [showCalendly, setShowCalendly] = useState(false);
   const [showClose, setShowClose] = useState(true);
 
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const form = formRef.current;
     if (!form) return;
 
-
     setIsLoading(true);
     setStatusMessage('');
-
 
     try {
       const result = await emailjs.sendForm(
@@ -103,11 +94,9 @@ const Contact: React.FC = () => {
     }
   };
 
-
   const handleBookMeeting = () => {
     setShowCalendly(true);
   };
-
 
   useEffect(() => {
     if (showCalendly) {
@@ -121,10 +110,8 @@ const Contact: React.FC = () => {
     }
   }, [showCalendly]);
 
-
   useEffect(() => {
     if (!showCalendly) return;
-
 
     const handleCalendlyMessage = (event: MessageEvent) => {
       if (
@@ -144,14 +131,12 @@ const Contact: React.FC = () => {
       }
     };
 
-
     window.addEventListener('message', handleCalendlyMessage);
     return () => window.removeEventListener('message', handleCalendlyMessage);
   }, [showCalendly]);
 
-
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className="min-h-screen bg-white relative overflow-hidden font-sans">
       {/* Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob" />
@@ -159,12 +144,10 @@ const Contact: React.FC = () => {
         <div className="absolute top-40 left-40 w-80 h-80 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-blob animation-delay-4000" />
       </div>
 
-
-      <Section id="contact" title="Get in Touch" className="relative z-10">
+      <Section id="contact" title="Get in Touch" className="relative z-10 font-sans">
         <div className="flex justify-center mb-12">
           <DotLottieReact src={contact} loop autoplay style={{ width: 210, height: 210 }} />
         </div>
-
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
           {/* LEFT - Contact Info */}
@@ -173,7 +156,6 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-8">
                 Contact Information
               </h3>
-
 
               <div className="space-y-6">
                 {/* Email */}
@@ -193,7 +175,6 @@ const Contact: React.FC = () => {
                     </a>
                   </div>
                 </div>
-
 
                 {/* LinkedIn */}
                 <div className="flex items-start group">
@@ -222,54 +203,53 @@ const Contact: React.FC = () => {
                   <div className="space-y-4">
                     <h4 className="text-lg font-semibold text-gray-900 mb-1">Call Us</h4>
                     
-                          {/* USA Office */}
-            <div className="flex items-center space-x-3">
-              <ReactCountryFlag countryCode="US" svg style={{ width: '2em', height: '2em' }} className="mr-2" /> 
-              <div>
-                <p className="text-gray-600 text-sm font-medium mb-2">USA Office</p>
-                <a href="tel:+12142068558" className="text-blue-600 hover:text-blue-700 font-medium">
-                  +1 214-206-8558
-                </a>
-              </div>
-            </div>
-            
-            {/* India Office */}
-            <div className="flex items-center space-x-3">
-              <ReactCountryFlag countryCode="IN" svg style={{ width: '2em', height: '2em' }} className="mr-2" />
-              <div>
-                <p className="text-gray-600 text-sm font-medium mb-2">India Office</p>
-                <a href="tel:+919791273026" className="text-blue-600 hover:text-blue-700 font-medium">
-                  +91 9791273026
-                </a>
-              </div>
-            </div>
-            
-            {/* Oman Office */}
-            <div className="flex items-center space-x-3">
-              <ReactCountryFlag countryCode="OM" svg style={{ width: '2em', height: '2em' }} className="mr-2" />
-              <div>
-                <p className="text-gray-600 text-sm font-medium mb-2">Oman Office</p>
-                <a href="tel:+96892416321" className="text-blue-600 hover:text-blue-700 font-medium">
-                  +968 92416321
-                </a>
-              </div>
-            </div>
-            
-            {/* Netherlands Office */}
-            <div className="flex items-center space-x-3">
-              <ReactCountryFlag countryCode="NL" svg style={{ width: '2em', height: '2em' }} className="mr-2" />
-              <div>
-                <p className="text-gray-600 text-sm font-medium mb-2">Netherlands Office</p>
-                <a href="tel:+31108990639" className="text-blue-600 hover:text-blue-700 font-medium">
-                  +31 10899 0639
-                </a>
-              </div>
+                    {/* USA Office */}
+                    <div className="flex items-center space-x-3">
+                      <ReactCountryFlag countryCode="US" svg style={{ width: '2em', height: '2em' }} className="mr-2" /> 
+                      <div>
+                        <p className="text-gray-600 text-sm font-medium mb-2">USA Office</p>
+                        <a href="tel:+12142068558" className="text-blue-600 hover:text-blue-700 font-medium">
+                          +1 214-206-8558
+                        </a>
+                      </div>
+                    </div>
+                    
+                    {/* India Office */}
+                    <div className="flex items-center space-x-3">
+                      <ReactCountryFlag countryCode="IN" svg style={{ width: '2em', height: '2em' }} className="mr-2" />
+                      <div>
+                        <p className="text-gray-600 text-sm font-medium mb-2">India Office</p>
+                        <a href="tel:+919791273026" className="text-blue-600 hover:text-blue-700 font-medium">
+                          +91 9791273026
+                        </a>
+                      </div>
+                    </div>
+                    
+                    {/* Oman Office */}
+                    <div className="flex items-center space-x-3">
+                      <ReactCountryFlag countryCode="OM" svg style={{ width: '2em', height: '2em' }} className="mr-2" />
+                      <div>
+                        <p className="text-gray-600 text-sm font-medium mb-2">Oman Office</p>
+                        <a href="tel:+96892416321" className="text-blue-600 hover:text-blue-700 font-medium">
+                          +968 92416321
+                        </a>
+                      </div>
+                    </div>
+                    
+                    {/* Netherlands Office */}
+                    <div className="flex items-center space-x-3">
+                      <ReactCountryFlag countryCode="NL" svg style={{ width: '2em', height: '2em' }} className="mr-2" />
+                      <div>
+                        <p className="text-gray-600 text-sm font-medium mb-2">Netherlands Office</p>
+                        <a href="tel:+31108990639" className="text-blue-600 hover:text-blue-700 font-medium">
+                          +31 10899 0639
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
 
             {/* Consultation Booking */}
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-xl">
@@ -298,13 +278,11 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-
           {/* RIGHT - Form */}
           <div className="bg-white/40 backdrop-blur-xl rounded-2xl p-8 border border-white/20 shadow-xl">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-8">
               Send Us a Message
             </h3>
-
 
             {statusMessage && (
               <div
@@ -317,7 +295,6 @@ const Contact: React.FC = () => {
                 {statusMessage}
               </div>
             )}
-
 
             <form className="space-y-6" ref={formRef} onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -349,7 +326,6 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-
               <div>
                 <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
                   Company
@@ -362,7 +338,6 @@ const Contact: React.FC = () => {
                   placeholder="Your Company"
                 />
               </div>
-
 
               <div>
                 <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -378,7 +353,6 @@ const Contact: React.FC = () => {
                 />
               </div>
 
-
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                   Message *
@@ -393,15 +367,12 @@ const Contact: React.FC = () => {
                 />
               </div>
 
-
               <input type="hidden" name="to_email" value="hello@trinitetech.com" />
-
 
               <Button variant="primary" className="w-full text-lg py-4" type="submit">
                 <Send size={20} className="mr-2" />
                 {isLoading ? 'Sending...' : 'Send Message'}
               </Button>
-
 
               <p className="text-center text-sm text-gray-500 mt-4">
                 We'll respond within 24 hours with a custom growth plan for your business.
@@ -411,10 +382,9 @@ const Contact: React.FC = () => {
         </div>
       </Section>
 
-
       {/* Calendly Modal */}
       {showCalendly && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm font-sans">
           <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-xl mx-4 p-0">
             {showClose && (
               <button
@@ -436,8 +406,7 @@ const Contact: React.FC = () => {
         </div>
       )}
 
-
-      {/* Animations */}
+      {/* Animations and Custom Font */}
       <style>{`
         @keyframes blob {
           0% {
@@ -462,10 +431,15 @@ const Contact: React.FC = () => {
         .animation-delay-4000 {
           animation-delay: 4s;
         }
+        .font-sans {
+          font-family: 'Roboto', 'Arial', 'Helvetica Neue', Arial, sans-serif !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          letter-spacing: 0.01em;
+        }
       `}</style>
     </div>
   );
-};
-
+  };
 
 export default Contact;
