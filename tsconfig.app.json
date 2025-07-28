@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "react-jsx"
+    // The "noEmit": true line has been removed.
+  },
+  "include": ["src"]
+}
