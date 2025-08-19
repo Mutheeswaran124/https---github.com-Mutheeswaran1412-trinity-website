@@ -35,7 +35,14 @@ const testimonialsData = [
 ];
 
 // Reusable component for each testimonial card
-const TestimonialCard = ({ name, title, image, quote }) => (
+type TestimonialCardProps = {
+  name: string;
+  title: string;
+  image: string;
+  quote: string;
+};
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ name, title, image, quote }) => (
   <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 w-96 flex-shrink-0">
     <div className="flex items-center mb-6">
       <img 
@@ -105,7 +112,7 @@ function TestimonialsSection() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(calc(-100% - 2rem)); }

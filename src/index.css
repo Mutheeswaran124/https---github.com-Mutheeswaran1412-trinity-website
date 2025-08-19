@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* If not using Tailwind via PostCSS, remove these lines. Otherwise, ensure your build tool is configured for Tailwind. */
 
 /* Base Styles */
 @layer base {
@@ -9,11 +7,12 @@
   }
 
   body {
-    @apply text-gray-700;
+    color: #374151; /* Tailwind's text-gray-700 */
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-gray-900;
+    font-weight: bold;
+    color: #111827; /* Tailwind's text-gray-900 */
   }
 }
 
@@ -28,7 +27,9 @@
   }
 
   .smooth-transition {
-    @apply transition-all duration-300 ease-in-out;
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
   }
 
   .h-500 {
@@ -36,7 +37,9 @@
   }
 
   .focus-visible\:ring-2:focus-visible {
-    @apply ring-2 ring-blue-500 ring-offset-2 outline-none;
+    outline: none;
+    box-shadow: 0 0 0 2px #3b82f6; /* ring-2 with blue-500 */
+    border-radius: 0.25rem; /* optional, for ring-offset-2 effect */
   }
 
   .line-clamp-2 {

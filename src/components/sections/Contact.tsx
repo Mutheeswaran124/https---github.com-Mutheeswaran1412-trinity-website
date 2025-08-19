@@ -267,14 +267,14 @@ const Contact: React.FC = () => {
                 Book a Meeting
               </Button>
               {showCalendly && (
-                <div className="mt-8">
-                  <div
-                    className="calendly-inline-widget"
-                    data-url="https://calendly.com/agil-george-trinitetech/30min"
-                    style={{ minWidth: '320px', height: '700px' }}
-                  ></div>
-                </div>
-              )}
+  <div className="mt-8">
+    <div
+      className="calendly-inline-widget"
+      data-url="https://calendly.com/antonytrinity/30min"
+      style={{ minWidth: '320px', height: '700px' }}
+    ></div>
+  </div>
+)}
             </div>
           </div>
 
@@ -398,7 +398,7 @@ const Contact: React.FC = () => {
             <div className="p-0">
               <div
                 className="calendly-inline-widget"
-                data-url="https://calendly.com/agil-george-trinitetech/30min"
+                data-url="https://calendly.com/antonytrinity/30min"
                 style={{ minWidth: '320px', height: '700px' }}
               ></div>
             </div>
